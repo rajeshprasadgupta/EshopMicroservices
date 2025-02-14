@@ -1,6 +1,7 @@
 ﻿
 namespace Catalog.API.Products.CreateProduct
 {
+	//Represents the presentation API layer for creating the product
 	public class CreateProductEndpoint : ICarterModule
 	{
 		public void AddRoutes(IEndpointRouteBuilder app) {

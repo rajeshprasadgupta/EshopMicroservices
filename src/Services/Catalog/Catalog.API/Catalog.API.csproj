@@ -7,10 +7,13 @@
     <UserSecretsId>2e275d33-ea7b-4dc8-ae73-9a07548c32cb</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     <DockerfileContext>..\..\..</DockerfileContext>
+    <DockerComposeProjectPath>..\..\..\docker-compose.dcproj</DockerComposeProjectPath>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Marten" Version="7.37.1" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.21.0" />
+    <PackageReference Include="Npgsql.DependencyInjection" Version="9.0.2" />
   </ItemGroup>
 
   <ItemGroup>
