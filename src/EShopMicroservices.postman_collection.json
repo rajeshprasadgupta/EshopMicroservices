@@ -1,0 +1,120 @@
+{
+	"info": {
+		"_postman_id": "1e2f4a9e-af52-4f0b-b26e-c1e498a50fb6",
+		"name": "EShopMicroservices",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2410151"
+	},
+	"item": [
+		{
+			"name": "Catalog",
+			"item": [
+				{
+					"name": "Get Products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{catalog_url}}/products",
+							"host": [
+								"{{catalog_url}}"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get ProductById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{catalog_url}}/products/0194feba-95aa-44fc-9cad-5b0cf02ac4ed",
+							"host": [
+								"{{catalog_url}}"
+							],
+							"path": [
+								"products",
+								"0194feba-95aa-44fc-9cad-5b0cf02ac4ed"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get ProductByCategory",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{catalog_url}}/products/?category/",
+							"host": [
+								"{{catalog_url}}"
+							],
+							"path": [
+								"products",
+								""
+							],
+							"query": [
+								{
+									"key": "category/",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Put Product",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"0194feba-95aa-44fc-9cad-5b0cf02ac4ed\",\r\n    \"name\": \"new Product B\",\r\n    \"category\": [\r\n        \"C\",\r\n        \"D\"\r\n    ],\r\n    \"description\": \"sss\",\r\n    \"imageFile\": \"img\",\r\n    \"price\": 99\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{catalog_url}}/products",
+							"host": [
+								"{{catalog_url}}"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Product",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Basket",
+			"item": []
+		},
+		{
+			"name": "Discount",
+			"item": []
+		},
+		{
+			"name": "Ordering",
+			"item": []
+		}
+	]
+}
