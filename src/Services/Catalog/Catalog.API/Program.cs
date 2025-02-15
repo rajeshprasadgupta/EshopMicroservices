@@ -4,10 +4,7 @@ using Weasel.Core;
 
 var builder = WebApplication.CreateBuilder(args);
 //add services to the DI container
-builder.Services.AddCarter(configurator: c => 
-{
-	c.WithModule<CreateProductEndpoint>();
-});
+builder.Services.AddCarter();
 builder.Services.AddMediatR(config => {
 	config.RegisterServicesFromAssembly(typeof(Program).Assembly);
 });

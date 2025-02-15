@@ -7,7 +7,7 @@ namespace Catalog.API.Products.CreateProduct
 		: ICommand<CreateProductResult>;
 
 	//Represents the ProductCommand result after creating the product
-	public record CreateProductResult(Guid id);
+	public record CreateProductResult(Guid Id);
 
 	//Responsible for handling the CQRS Command for creating the product
 	//In order to trigger the handler, we need a mediator for abstraction of the Command and Query, so it implements IRequestHandler
