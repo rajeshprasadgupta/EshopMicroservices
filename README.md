@@ -7,3 +7,4 @@
 Also, each aspect of a feature is encapulated in a single class.
 - Uses Carter Library for routing in ASP.NET Minimal APIs
 - Uses Mapster for mapping between domain and DTO objects
+- User Fluent Validation for request Validation rules
