@@ -1,8 +1,4 @@
-﻿
-using Catalog.API.Exceptions;
-using Catalog.API.Products.CreateProduct;
-
-namespace Catalog.API.Products.DeleteProduct
+﻿namespace Catalog.API.Products.DeleteProduct
 {
 	public record DeleteProductCommand(Guid Id) : ICommand<DeleteProductResult>;
 
