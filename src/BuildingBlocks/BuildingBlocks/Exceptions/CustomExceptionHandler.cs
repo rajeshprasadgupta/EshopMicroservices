@@ -32,6 +32,7 @@ namespace BuildingBlocks.Exceptions
 			{
 				problemDetails.Extensions.Add("ValidationErrors", validationException.Errors);
 			}
+			httpContext.Response.StatusCode = problemDetails.Status.Value;
 			await httpContext.Response.WriteAsJsonAsync(problemDetails, cancellationToken:cancellationToken);
 			return true;
 		}
