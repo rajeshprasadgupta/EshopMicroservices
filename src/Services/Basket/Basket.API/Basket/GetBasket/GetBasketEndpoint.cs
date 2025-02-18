@@ -16,6 +16,7 @@ namespace Basket.API.Basket.GetBasket
 			}).WithName("GetBasket")
 			.Produces<GetBasketResponse>(StatusCodes.Status200OK)
 			.ProducesProblem(StatusCodes.Status400BadRequest)
+			.ProducesProblem(StatusCodes.Status404NotFound)
 			.WithDescription("Get Basket")
 			.WithSummary("Get Basket");
 		}

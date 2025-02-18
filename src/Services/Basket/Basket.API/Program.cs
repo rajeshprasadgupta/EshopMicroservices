@@ -15,8 +15,18 @@ builder.Services.AddMediatR(config =>
 var connectionString = builder.Configuration.GetConnectionString("Database");
 builder.Services.AddMarten(connectionString!).UseLightweightSessions();
 builder.Services.AddScoped<IBasketRepository, BasketRepository>();
+var redisConnectionString = builder.Configuration.GetConnectionString("Redis");
+builder.Services.AddStackExchangeRedisCache(options =>
+{
+	options.Configuration = redisConnectionString;
+});
+//decorate the repository with the cached repository using Scrutor DI package
+builder.Services.Decorate<IBasketRepository, CachedBasketRepository>();
 builder.Services.AddExceptionHandler<CustomExceptionHandler>();
+//add health check for postgres
 builder.Services.AddHealthChecks().AddNpgSql(connectionString!);
+//add health check for redis
+builder.Services.AddHealthChecks().AddRedis(redisConnectionString!);
 var app = builder.Build();
 // Configure the HTTP request pipeline.
 app.MapCarter();

@@ -7,4 +7,6 @@
 Also, each aspect of a feature is encapulated in a single class.
 - Uses Carter Library for routing in ASP.NET Minimal APIs
 - Uses Mapster for mapping between domain and DTO objects
-- User Fluent Validation for request Validation rules
+- Uses Fluent Validation for request Validation rules
+- Uses Redis Cache for Basket Microservice
+- Added Health Checks in ASP.NET Core for health monitoring of all Microservices and its dependencies

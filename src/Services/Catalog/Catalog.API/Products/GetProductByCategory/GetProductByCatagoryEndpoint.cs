@@ -15,6 +15,7 @@
 			.WithName("GetProductByCategory")
 			.Produces<GetProductByCategoryResonse>(StatusCodes.Status200OK)
 			.ProducesProblem(StatusCodes.Status400BadRequest)
+			.ProducesProblem(StatusCodes.Status404NotFound)
 			.WithDescription("Get Products by Category")
 			.WithSummary("Get Products by Category");
 		}
