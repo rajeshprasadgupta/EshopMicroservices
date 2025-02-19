@@ -1,10 +1,12 @@
 using Basket.API.Data;
 using BuildingBlocks.Exceptions;
+using Discount.Grpc;
 using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 
 var builder = WebApplication.CreateBuilder(args);
 //Add Services to the container
+//Application Services
 builder.Services.AddCarter();
 builder.Services.AddMediatR(config =>
 {
@@ -13,6 +15,7 @@ builder.Services.AddMediatR(config =>
 	config.AddOpenBehavior(typeof(LoggingBehavior<,>));
 });
 var connectionString = builder.Configuration.GetConnectionString("Database");
+//Data Services
 builder.Services.AddMarten(connectionString!).UseLightweightSessions();
 builder.Services.AddScoped<IBasketRepository, BasketRepository>();
 var redisConnectionString = builder.Configuration.GetConnectionString("Redis");
@@ -22,6 +25,21 @@ builder.Services.AddStackExchangeRedisCache(options =>
 });
 //decorate the repository with the cached repository using Scrutor DI package
 builder.Services.Decorate<IBasketRepository, CachedBasketRepository>();
+//Add Grpc service
+builder.Services.AddGrpcClient<DiscountProtoService.DiscountProtoServiceClient>(options =>
+{
+	options.Address = new Uri(builder.Configuration["GrpcSettings:DiscountUrl"]!);
+}).ConfigurePrimaryHttpMessageHandler(options => 
+{
+	var handler = new HttpClientHandler()
+	{
+		ServerCertificateCustomValidationCallback =
+		HttpClientHandler.DangerousAcceptAnyServerCertificateValidator
+	};
+	return handler;
+});
+	
+//Cross-Cussting Services
 builder.Services.AddExceptionHandler<CustomExceptionHandler>();
 //add health check for postgres
 builder.Services.AddHealthChecks().AddNpgSql(connectionString!);
