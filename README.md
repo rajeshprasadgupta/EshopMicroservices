@@ -1,5 +1,5 @@
 # EshopMicroservices
-Is a set of Microservices on .NET 8 platform using ASP.NET Core Web API, Docker, RabbitMQ, MassTransit, gRPC, YARP API Gateway, PostgreSQL, Redis, SQLite, SQL Server, Marten, Entity Framework Core, CQRS, MediatR, DDD, and vertical and clean architecture.
+Is a set of Microservices on .NET 8 platform using ASP.NET Core Web API, Docker, RabbitMQ, MassTransit, gRPC, YARP API Gateway, PostgreSQL, Redis, SQLite, SQL Server, Marten, Entity Framework Core, CQRS (logical), MediatR, DDD, and vertical and clean architecture.
 It has e-commerce modules such as Product, Basket, Discount, and Ordering microservices with NoSQL (PostgreSQL DocumentDB, Redis) and relational databases (SQLite, SQL Server) using RabbitMQ for event-driven communication and YARP API Gateway.
 
 Key components include:
@@ -7,7 +7,7 @@ Key components include:
 ### Catalog Microservice:
 - ASP.NET Core Minimal APIs
 - Vertical Slice Architecture
-- CQRS with MediatR
+- CQRS (logical) with MediatR
 - Marten for .NET Transactional Document DB
 - Carter for Minimal API endpoint definition
 - Logging, exception handling, and health checks
@@ -25,7 +25,7 @@ Key components include:
 - Microservices communication using RabbitMQ and MassTransit
 
 ### Ordering Microservice:
-- DDD, CQRS, and clean architecture
+- DDD, CQRS (logical), and Clean Architecture
 - MediatR, FluentValidation, and Mapster packages
 - Entity Framework Core with SQL Server
 
@@ -42,7 +42,7 @@ Key components include:
 ### Technology stack includes:
 - ASP.NET Core 8 for Web API development
 - Vertical Slice Architecture
-- CQRS with MediatR and FluentValidation
+- CQRS (logical) with MediatR and FluentValidation
 - Marten for PostgreSQL NoSQL Document DB
 - Redis as distributed cache
 - gRPC for inter-service communication
