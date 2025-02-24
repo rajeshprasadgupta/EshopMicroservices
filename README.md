@@ -34,11 +34,6 @@ Key components include:
 - Configuration for routing, clustering, and transformations
 - Rate limiting with FixedWindowLimiter
 
-### WebUI ShoppingApp Microservice:
-- ASP.NET Core web application with Bootstrap and Razor
-- Consuming YARP API Gateway APIs using Refit Library
-- Docker compose for containerization and orchestration
-
 ### Technology stack includes:
 - ASP.NET Core 8 for Web API development
 - Vertical Slice Architecture
@@ -59,3 +54,7 @@ Key components include:
 
 ## Design Principles Applied
 SOLID, KISS, YAGNI, SoC, DIP, Dependency Injection
+
+## Design Patterns Applied
+REPR (Request EndPoint Response) for REST APIs, 
+CQRS : Request -> MediatR -> Handler -> Response
