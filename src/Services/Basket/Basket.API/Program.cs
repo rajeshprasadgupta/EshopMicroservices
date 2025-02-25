@@ -1,5 +1,6 @@
 using Basket.API.Data;
 using BuildingBlocks.Exceptions;
+using BuildingBlocks.Messaging.MassTransit;
 using Discount.Grpc;
 using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
@@ -38,7 +39,8 @@ builder.Services.AddGrpcClient<DiscountProtoService.DiscountProtoServiceClient>(
 	};
 	return handler;
 });
-	
+//Async Communication services
+builder.Services.AddMessageBroker(builder.Configuration);
 //Cross-Cussting Services
 builder.Services.AddExceptionHandler<CustomExceptionHandler>();
 //add health check for postgres

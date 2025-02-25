@@ -29,11 +29,6 @@ Key components include:
 - MediatR, FluentValidation, and Mapster packages
 - Entity Framework Core with SQL Server
 
-### YARP API Gateway Microservice:
-- Implementing API gateways with YARP Reverse Proxy
-- Configuration for routing, clustering, and transformations
-- Rate limiting with FixedWindowLimiter
-
 ### Technology stack includes:
 - ASP.NET Core 8 for Web API development
 - Vertical Slice Architecture
@@ -52,9 +47,3 @@ Key components include:
 - OrderItem 1:1 Product
 - Product 1:N Category
 
-## Design Principles Applied
-SOLID, KISS, YAGNI, SoC, DIP, Dependency Injection
-
-## Design Patterns Applied
-REPR (Request EndPoint Response) for REST APIs, 
-CQRS : Request -> MediatR -> Handler -> Response
