@@ -1,17 +1,22 @@
 ﻿namespace Catalog.API.Data
 {
 	using Marten.Schema;
-	public class CatalogInitialData : IInitialData
+	public class CatalogInitialData
+		(ILogger<CatalogInitialData> logger)
+		: IInitialData
 	{
 		public async Task Populate(IDocumentStore store, CancellationToken cancellation)
 		{
-			using var session =store.LightweightSession();
-			if(await session.Query<Product>().AnyAsync())
+			using (var session = store.LightweightSession())
 			{
-				return;
+				if (await session.Query<Product>().AnyAsync())
+				{
+					logger.LogInformation("Products are already populated, so skipping inserting db with Initial products");
+					return;
+				}
+				session.Store<Product>(GetProducts());
+				await session.SaveChangesAsync(cancellation);
 			}
-			session.Store<Product>(GetProducts());
-			await session.SaveChangesAsync(cancellation);
 		}
 
 		private IEnumerable<Product> GetProducts()

@@ -234,7 +234,139 @@
 		},
 		{
 			"name": "Ordering",
-			"item": []
+			"item": [
+				{
+					"name": "POST Orders",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"Order\": \r\n        {\r\n        \t\"CustomerId\": \"58c49479-ec65-4de2-86e7-033c546291aa\",\r\n            \"OrderName\": \"ORD_4\",\r\n            \"ShippingAddress\": \r\n            \t{\r\n            \t\t\"FirstName\": \"Valentina\",\r\n\t                \"LastName\": \"Legros\",\r\n\t                \"EmailAddress\": \"valeg@xmail.com\",\r\n\t                \"AddressLine\": \"Wiegand Pass Suite 825\",\r\n\t                \"Country\": \"USA\",\r\n\t                \"State\": \"Oklahoma\",\r\n\t                \"ZipCode\": \"41248\"\r\n            \t},\r\n            \"BillingAddress\": \r\n            \t{\r\n            \t\t\"FirstName\": \"Valentina\",\r\n\t                \"LastName\": \"Legros\",\r\n\t                \"EmailAddress\": \"valeg@xmail.com\",\r\n\t                \"AddressLine\": \"Wiegand Pass Suite 825\",\r\n\t                \"Country\": \"USA\",\r\n\t                \"State\": \"Oklahoma\",\r\n\t                \"ZipCode\": \"41248\"\r\n            \t},\r\n            \"Payment\": \r\n            \t{\r\n            \t\t\"CardName\": \"CARD_1\",\r\n\t                \"CardNumber\": \"875-444-3739\",\r\n\t                \"Expiration\": \"12/29\",\r\n\t                \"Cvv\": \"455\",\r\n\t                \"PaymentMethod\": 1\r\n            \t},\r\n            \"Status\": 2,\r\n            \"OrderItems\": [\r\n                {\r\n\t                \"ProductId\": \"5334c996-8457-4cf0-815c-ed2b77c4ff61\",\r\n\t                //\"ProductName\": \"IPhone X\",\r\n\t                \"Quantity\": 2,\r\n\t                \"Price\": 500\r\n                },\r\n                {\r\n\t                \"ProductId\": \"c67d6323-e8b1-4bdf-9a75-b0d0d2e7e914\",\r\n\t                //\"ProductName\": \"Samsung 10\",\r\n\t                \"Quantity\": 1,\r\n\t                \"Price\": 500\r\n                }\r\n            ]  \r\n        }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ordering_url}}/orders",
+							"host": [
+								"{{ordering_url}}"
+							],
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Order By Name",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Update Order",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"Order\": \r\n        {\r\n            \"id\": \"c5d2078d-65d7-4fc8-872c-0142715e24ae\",\r\n        \t\"CustomerId\": \"58c49479-ec65-4de2-86e7-033c546291aa\",\r\n            \"OrderName\": \"ORD_4\",\r\n            \"ShippingAddress\": \r\n            \t{\r\n            \t\t\"FirstName\": \"Valentina\",\r\n\t                \"LastName\": \"Legros\",\r\n\t                \"EmailAddress\": \"valeg@xmail.com\",\r\n\t                \"AddressLine\": \"Wiegand Pass Suite 825\",\r\n\t                \"Country\": \"USA\",\r\n\t                \"State\": \"Oklahoma\",\r\n\t                \"ZipCode\": \"41248\"\r\n            \t},\r\n            \"BillingAddress\": \r\n            \t{\r\n            \t\t\"FirstName\": \"Valentina\",\r\n\t                \"LastName\": \"Legros\",\r\n\t                \"EmailAddress\": \"valeg@xmail.com\",\r\n\t                \"AddressLine\": \"Wiegand Pass Suite 825\",\r\n\t                \"Country\": \"USA\",\r\n\t                \"State\": \"Oklahoma\",\r\n\t                \"ZipCode\": \"41248\"\r\n            \t},\r\n            \"Payment\": \r\n            \t{\r\n            \t\t\"CardName\": \"CARD_1\",\r\n\t                \"CardNumber\": \"875-444-3739\",\r\n\t                \"Expiration\": \"12/29\",\r\n\t                \"Cvv\": \"455\",\r\n\t                \"PaymentMethod\": 1\r\n            \t},\r\n            \"Status\": 2,\r\n            \"OrderItems\": [\r\n                {\r\n\t                \"ProductId\": \"5334c996-8457-4cf0-815c-ed2b77c4ff61\",\r\n\t                //\"ProductName\": \"IPhone X\",\r\n\t                \"Quantity\": 2,\r\n\t                \"Price\": 500\r\n                },\r\n                {\r\n\t                \"ProductId\": \"c67d6323-e8b1-4bdf-9a75-b0d0d2e7e914\",\r\n\t                //\"ProductName\": \"Samsung 10\",\r\n\t                \"Quantity\": 1,\r\n\t                \"Price\": 500\r\n                }\r\n            ]  \r\n        }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ordering_url}}/orders",
+							"host": [
+								"{{ordering_url}}"
+							],
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Orders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ordering_url}}/orders?PageSize=5&PageIndex=0",
+							"host": [
+								"{{ordering_url}}"
+							],
+							"path": [
+								"orders"
+							],
+							"query": [
+								{
+									"key": "PageSize",
+									"value": "5"
+								},
+								{
+									"key": "PageIndex",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Orders By Customer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ordering_url}}/orders/customer/189dc8dc-990f-48e0-a37b-e6f2b60b9d7d",
+							"host": [
+								"{{ordering_url}}"
+							],
+							"path": [
+								"orders",
+								"customer",
+								"189dc8dc-990f-48e0-a37b-e6f2b60b9d7d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Order",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Health",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ordering_url}}/health",
+							"host": [
+								"{{ordering_url}}"
+							],
+							"path": [
+								"health"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }

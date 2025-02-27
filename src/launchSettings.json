@@ -4,10 +4,16 @@
       "commandName": "DockerCompose",
       "commandVersion": "1.0",
       "serviceActions": {
-        "catalog.api": "StartDebugging",
-        "basket.api": "StartDebugging",
-        "discount.grpc": "StartDebugging",
-        "ordering.api": "StartDebugging"
+        "basket.api": "StartWithoutDebugging",
+        "discount.grpc": "StartWithoutDebugging",
+        "ordering.api": "StartWithoutDebugging",
+        "basketdb": "StartWithoutDebugging",
+        "catalogdb": "StartWithoutDebugging",
+        "distributedcache": "StartWithoutDebugging",
+        "messagebroker": "StartWithoutDebugging",
+        "orderdb": "StartWithoutDebugging",
+        "catalog.api": "StartWithoutDebugging",
+        "yarpapigateway": "StartWithoutDebugging"
       }
     }
   }

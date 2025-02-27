@@ -30,8 +30,8 @@ public class BasketCheckoutEventHandler
 			Status: Ordering.Domain.Enums.OrderStatus.Pending,
 			OrderItems:
 			[
-				new OrderItemDto(orderId, new Guid("5334c996-8457-4cf0-815c-ed2b77c4ff61"), 2, 500),
-				new OrderItemDto(orderId, new Guid("c67d6323-e8b1-4bdf-9a75-b0d0d2e7e914"), 1, 400)
+				new OrderItemDto(orderId, new Guid("01950f0f-9591-4535-927b-bf084054f476"), 2, 100),
+				new OrderItemDto(orderId, new Guid("01950f0f-9594-43c3-beb8-df7fcd377b8d"), 1, 200)
 			]);
 		return new CreateOrderCommand(orderDto);
 	}
