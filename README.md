@@ -47,5 +47,6 @@ Key components include:
 - OrderItem 1:1 Product
 - Product 1:N Category
 
-#Steps To run the services 
+# Steps To run the services 
+
 Execute the docker compose up command from src directory to run the microservices, redis cache, databases and rabbitmq and then open postman collection in src directory, select the appropriate environment and execute the enpoints.
