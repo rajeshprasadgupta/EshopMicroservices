@@ -50,3 +50,8 @@ Key components include:
 # Steps To run the services 
 
 Execute the docker compose up command from src directory to run the microservices, redis cache, databases and rabbitmq and then open postman collection in src directory, select the appropriate environment and execute the enpoints.
+
+## TODOs
+- Add unit and integration tests
+- Add a Front end interface to consume these services hosted behind an API gateway
+- Add observability to the services
